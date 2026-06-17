@@ -1804,7 +1804,7 @@ async function importLocalStorage(file) {
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./s.js")
+    navigator.serviceWorker.register("./sw.js")
       .then(() => {})
       .catch(err => alert("Error: Couldn't Register Serviece Worker"));
   });
