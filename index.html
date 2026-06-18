@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale=1.0">
+    <title>|Study Assist|</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="database.js" type="module"></script>
+    <script src="script.js" type="module"></script>
+    
+        <!-- Varela Round Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    
+    <!-- PWA SETTINGS -->
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+    
+</head>
+
+<body>
+
+    <div class="display" id="errorDisplay">
+        <h4 id="displayTxt">Lets see! how this works</h4>
+        <button id="errorCancel">
+            <?xml version="1.0" encoding="utf-8"?>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="122.878px" height="122.88px" viewBox="0 0 122.878 122.88">
+                <g>
+                    <path fill="currentColor" d="M1.426,8.313c-1.901-1.901-1.901-4.984,0-6.886c1.901-1.902,4.984-1.902,6.886,0l53.127,53.127l53.127-53.127c1.901-1.902,4.984-1.902,6.887,0c1.901,1.901,1.901,4.985,0,6.886L68.324,61.439l53.128,53.128c1.901,1.901,1.901,4.984,0,6.886c-1.902,1.902-4.985,1.902-6.887,0L61.438,68.326L8.312,121.453c-1.901,1.902-4.984,1.902-6.886,0c-1.901-1.901-1.901-4.984,0-6.886l53.127-53.128L1.426,8.313z"/>
+                </g>
+            </svg>
+        </button>
+    </div>
+
+    <div class="main-cont">
+
+        <!-- NAV -->
+        <div class="nav-buttons">
+
+            <button id="homeBtn" class="nav-button active" data-page="homePage"><?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" class="nav-icon" viewBox="0 0 122.88 112.07" width="20" height="20" style="enable-background:new 0 0 122.88 112.07" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><g><path fill="currentColor" class="st0" d="M61.44,0L0,60.18l14.99,7.87L61.04,19.7l46.85,48.36l14.99-7.87L61.44,0L61.44,0z M18.26,69.63L18.26,69.63 L61.5,26.38l43.11,43.25h0v0v42.43H73.12V82.09H49.49v29.97H18.26V69.63L18.26,69.63L18.26,69.63z"/></g></svg>
+    </button>
+
+            <button class="nav-button" id="historyBtn" data-page="historyPage">
+                    <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 513.11" class="nav-icon" width="20" height="20"><path fill-rule="nonzero" fill="currentColor" d="M210.48 160.8c0-14.61 11.84-26.46 26.45-26.46s26.45 11.85 26.45 26.46v110.88l73.34 32.24c13.36 5.88 19.42 21.47 13.54 34.82-5.88 13.35-21.47 19.41-34.82 13.54l-87.8-38.6c-10.03-3.76-17.16-13.43-17.16-24.77V160.8zM5.4 168.54c-.76-2.25-1.23-4.64-1.36-7.13l-4-73.49c-.75-14.55 10.45-26.95 25-27.69 14.55-.75 26.95 10.45 27.69 25l.74 13.6a254.258 254.258 0 0136.81-38.32c17.97-15.16 38.38-28.09 61.01-38.18 64.67-28.85 134.85-28.78 196.02-5.35 60.55 23.2 112.36 69.27 141.4 132.83.77 1.38 1.42 2.84 1.94 4.36 27.86 64.06 27.53 133.33 4.37 193.81-23.2 60.55-69.27 112.36-132.83 141.39a26.24 26.24 0 01-12.89 3.35c-14.61 0-26.45-11.84-26.45-26.45 0-11.5 7.34-21.28 17.59-24.92 7.69-3.53 15.06-7.47 22.09-11.8.8-.66 1.65-1.28 2.55-1.86 11.33-7.32 22.1-15.7 31.84-25.04.64-.61 1.31-1.19 2-1.72 20.66-20.5 36.48-45.06 46.71-71.76 18.66-48.7 18.77-104.46-4.1-155.72l-.01-.03C418.65 122.16 377.13 85 328.5 66.37c-48.7-18.65-104.46-18.76-155.72 4.1a203.616 203.616 0 00-48.4 30.33c-9.86 8.32-18.8 17.46-26.75 27.29l3.45-.43c14.49-1.77 27.68 8.55 29.45 23.04 1.77 14.49-8.55 27.68-23.04 29.45l-73.06 9c-13.66 1.66-26.16-7.41-29.03-20.61zM283.49 511.5c20.88-2.34 30.84-26.93 17.46-43.16-5.71-6.93-14.39-10.34-23.29-9.42-15.56 1.75-31.13 1.72-46.68-.13-9.34-1.11-18.45 2.72-24.19 10.17-12.36 16.43-2.55 39.77 17.82 42.35 19.58 2.34 39.28 2.39 58.88.19zm-168.74-40.67c7.92 5.26 17.77 5.86 26.32 1.74 18.29-9.06 19.97-34.41 3.01-45.76-12.81-8.45-25.14-18.96-35.61-30.16-9.58-10.2-25.28-11.25-36.11-2.39a26.436 26.436 0 00-2.55 38.5c13.34 14.2 28.66 27.34 44.94 38.07zM10.93 331.97c2.92 9.44 10.72 16.32 20.41 18.18 19.54 3.63 36.01-14.84 30.13-33.82-4.66-15-7.49-30.26-8.64-45.93-1.36-18.33-20.21-29.62-37.06-22.33C5.5 252.72-.69 262.86.06 274.14c1.42 19.66 5.02 39 10.87 57.83z"/></svg>
+                
+            </button>
+    
+            <button class="nav-button" id="achBtn" data-page="achPage"><?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 116.95 122.88" class="nav-icon" width="20" height="20" style="enable-background:new 0 0 116.95 122.88" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><g><path fill="currentColor" class="st0" d="M88.75,28.3h27.96c1.45,25.32-2.84,48.84-37.55,47.08c-8.49,10.24-18.71,12.95-13.08,28.24h5.78 c2.9,0,5.26,2.37,5.26,5.26v4.28h2.21c2.84,0,5.17,2.32,5.17,5.17v4.55H32.45v-4.55c0-2.84,2.32-5.17,5.17-5.17h2.21v-4.28 c0-2.9,2.37-5.26,5.26-5.26h6.38c5.27-15.01-4.78-17.25-13.3-28.27C3.11,77.31-1.22,53.72,0.24,28.3H28.2v-8.77h-4.65 c-2.91,0-5.28-2.38-5.28-5.28v-5.2h-0.39c-2.49,0-4.52-2.04-4.52-4.52V1.8c0-0.99,0.81-1.8,1.8-1.8h86.64c0.99,0,1.8,0.81,1.8,1.8 v2.72c0,2.49-2.04,4.52-4.52,4.52h-0.39v5.2c0,2.91-2.38,5.28-5.28,5.28h-4.65V28.3L88.75,28.3z M58.48,30.82l3.13,7.62l8.23,0.62 l-6.3,5.34l1.96,8l-7.01-4.34l-7.01,4.34l1.96-8l-6.3-5.34l8.23-0.62L58.48,30.82L58.48,30.82z M86.24,37.78l-3.11,28.06 c20.66-0.21,23.82-11.59,23.82-28.06H86.24L86.24,37.78z M30.71,37.78l3.11,28.06C13.17,65.63,10,54.25,10,37.78H30.71L30.71,37.78 z M58.48,25.91c8.67,0,15.7,7.03,15.7,15.7c0,8.67-7.03,15.7-15.7,15.7c-8.67,0-15.7-7.03-15.7-15.7 C42.77,32.94,49.8,25.91,58.48,25.91L58.48,25.91z"/></g></svg>
+            </button>
+    
+    
+            <button class="nav-button" id="logInPageBtn" data-page="logInPage">
+                <?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.881 122.88" enable-background="new 0 0 110.395 122.88" xml:space="preserve"><g><path fill-rule="evenodd" fill="currentColor" clip-rule="evenodd" d="M0,79.239v-34.54h35.025V13.631l47.004,48.305L35.025,110.31v-31.07H0L0,79.239z M93.359,17.16L75.68,9.377L75.99,0h34.404v61.439v61.44H75.99l-0.311-6.835l17.68-10.946V17.16L93.359,17.16z"/></g></svg>            
+            </button>
+    
+            <button class="nav-button" id="profilePageBtn" data-page="profilePage">
+                <?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 109.68 122.88" style="enable-background:new 0 0 109.68 122.88" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><g><path fill="currentColor" class="st0" d="M25.02,90.59c9.73,9.45,19.51,14.73,29.37,15.03c9.88,0.3,19.97-4.42,30.31-14.97 c-1.5-0.35-3.1-0.69-4.79-1.03l0,0.01l-0.24-0.05c-2.96-0.59-8.37-1.68-11.78-3.75c-1.94-1.18-3.04-2.33-3.01-3.91 c-2.56,1.53-5.25,2.51-8.01,2.9c-4.21,0.6-8.53-0.19-12.77-2.5c0.21,1.77-0.77,3.01-2.65,4.15c-2.92,1.77-7.61,2.54-11.04,3.1 c-0.8,0.13-1.53,0.25-2.23,0.39C27.08,90.15,26.03,90.36,25.02,90.59L25.02,90.59z M38.06,25.98 c6.61,11.54,19.36,19.25,43.05,20.13c0.69,2.01,0.47,4.12,0,6.24c-9.72,33.2-34.62,42.57-51.83,8.7l-2.58-6.92 c-5.27-10.77,4.55-6.38,8.14-14.01l1.51-6.63L38.06,25.98L38.06,25.98z M84.7,58.7c9.06-35.18,0.08-50.06-16.43-52.87 C64.76,1.99,58.22,0.25,53.6,0C13.7,2.02,11.88,44.53,21.87,72.53l9.8-2.16c2.89,4.18,5.93,7.41,9.04,9.75l0.1,0.16 c1.02,1.68,0.41,2.82-0.92,3.62c-2.41,1.47-6.78,2.18-9.98,2.7c-0.91,0.15-1.74,0.28-2.32,0.4c-10.48,2.05-17.33,4.49-21.66,9.6 C1.62,101.69,0,109.22,0,121.39c0,0.83,0.67,1.49,1.49,1.49h106.7c0.83,0,1.49-0.67,1.49-1.49c0-12.5-1.71-20.02-6.3-25.07 c-4.57-5.03-11.8-7.39-22.9-9.62l0,0l0-0.01l-0.24-0.05c-2.79-0.56-7.89-1.58-10.83-3.36c-1.5-0.91-2.35-2.05-1.55-3.45 c0.88-0.7,1.74-1.47,2.58-2.31c4.35-4.32,8.17-10.46,11.12-18.12L84.7,58.7L84.7,58.7z M88.67,91.67 c-11.57,12.35-23.02,17.86-34.38,17.52c-11.36-0.34-22.46-6.54-33.33-17.6c-5.84,1.62-9.97,3.68-12.74,6.94 c-3.63,4.28-5.1,10.82-5.22,21.36h103.69c-0.13-10.81-1.66-17.33-5.51-21.57C98.41,95.26,94.34,93.29,88.67,91.67L88.67,91.67z"/></g></svg>  
+            </button>
+
+        </div>
+
+        <!-- ================= HOME PAGE ================= -->
+        <div id="homePage" class="homePage page activePage">
+
+            <h1>⚡Study Report⚡</h1>
+
+            <div class="bar-cont">
+                <h4 id="ppCount">🌊 Progress: <span>Cycle:</span>&nbsp<span> 1</span></h4>
+                <div class="PP-bar" id="ppBar"></div>
+
+                <h4 id="xpCount">🌟 XP: <span> 0 / 0</span></h4>
+                <div class="XP-bar" id="xpBar"></div>
+
+                <h4 id="levelCount">🎓 Level: 🗡️&nbsp<span> 1</span></h4>
+                <h4 id="streakCount">🩸 Streak: 🔥<span>  0</span></h4>
+            </div>
+
+            <div class="study-mode">
+
+                <div class="btn-cont">
+                    <button id="goTimer" class="active">Timer</button>
+                    <button id="goStopwatch">Stop Watch</button>
+                </div>
+
+                <h3 id="studyModeStatus">Add A Task With Timer ⏰</h3>
+
+                <div class="input-group">
+                    <select id="selSubject">
+                        <option value="">--Select Subject--</option>
+                        <option value="Bangla">Bangla</option>
+                        <option value="English">English</option>
+                        <option value="Higher Math">Higher Math</option>
+                        <option value="Physics">Physics</option>
+                        <option value="Chemistry">Chemistry</option>
+                        <option value="Biology">Biology</option>
+                        <option value="ICT">ICT</option>
+                    </select>
+
+                    <input type="text" id="selDesc" placeholder="Topic / Description">
+
+                    <select id="selDiff">
+                        <option value="">--Select-Difficulty--</option></>
+                        <option value="600" data-label="Easy">Easy</option>
+                        <option value="1" data-label="Medium">Medium</option>
+                        <option value="3000" data-label="Hard">Hard</option>
+                    </select>
+                </div>
+
+                <div class="timer-mode">
+                    <button id="addTaskBtn"><span>+</span> Add Task</button>
+                </div>
+
+                <div class="stopwatch-mode hidden">
+                    <div class="stopwatch-cont">
+                        <h4 class="time" id="stopWatchDisplay">00:00:00</h4>
+                    </div>
+
+                    <button id="startStopwatch">START</button>
+                    <button id="stopPauseBtn">PAUSE</button>
+                    <button id="stopResumeBtn">RESUME</button>
+                    <button id="stopConfirmBtn">CONFIRM</button>
+                </div>
+
+            </div>
+
+            <div class="taskBox" id="taskBox">
+
+                <h3 id="taskHeading">Pending Task 📝</h3>
+
+                <div class="task-card">
+                    <h4 id="subject">Biology</h4>
+                    <h5 id="topic">Diffusion & Respiration</h5>
+                    <h5 id="difficulity">Hard</h5>
+                </div>
+
+                <div class="timer-cont" id="timerCont">
+                    <h2 id="timer">
+                        <span id="timerHour">00:</span>
+                        <span id="timerMin">00:</span>
+                        <span id="timerSec">00</span>
+                    </h2>
+                </div>
+
+                <button id="pauseBtn">PAUSE</button>
+                <button id="confirmTimerTaskBtn">CONFIRM</button>
+                <button id="timerResumeBtn">RESUME</button>
+
+            </div>
+            
+            <div class="reward-list">
+                <h3>🎁Reward Earned🎁</h3>
+            </div>
+
+        </div>
+
+        <!-- ================= HISTORY PAGE ================= -->
+        <div class="historyPage page" id="historyPage">
+
+            <div class="head-cont">
+                <h1>📚Study History</h1>
+            </div>
+
+            <div class="status-cont">
+                <h3 id="status"></h3>
+            </div>
+
+            <div class="history-cont">
+                <!-- HISTORY BOXES -->
+            </div>
+        </div>
+        
+        <!-- ================= Achievement PAGE ================= -->
+        
+        <div class="achpage page" id="achPage">
+            
+            <div class="head-cont">
+                <h1>🌌Import / Export</h1>
+                <h3 id="greet">🌟Import or Export Your Profile Data</h3>
+            </div>
+            
+            <div class="action-cont">
+                <div class="upload-wrapper">
+    <!-- Upload Zone -->
+    <label class="upload-zone" id="uploadZone">
+        <input
+            type="file"
+            id="fileInput"
+            accept=".json, application/json"
+            aria-label="Choose file to upload"
+        >
+        <div class="upload-icon-wrap">
+            <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="17 8 12 3 7 8" />
+                <line x1="12" y1="3" x2="12" y2="15" />
+            </svg>
+        </div>
+        <div class="upload-text-block">
+            <span class="upload-title">Drop your file here or <span style="color: var(--accent-glow);">browse</span></span>
+            <span class="upload-subtitle">Supports: Only JSON Ext. Files</span>
+        </div>
+    </label>
+
+    <!-- File Info Bar (slides in) -->
+    <div class="file-info" id="fileInfo">
+        <div class="file-info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+            </svg>
+        </div>
+        <div class="file-info-details">
+            <span class="file-info-name" id="fileName">No file chosen</span>
+            <span class="file-info-size" id="fileSize">—</span>
+        </div>
+        <button class="file-info-remove" id="removeFile" title="Remove file">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <button class="action-btn action-btn--import" id="importBtn" disabled>
+            <svg class="action-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            <span>IMPORT</span>
+        </button>
+
+        <div class="action-divider">
+            <span class="action-divider-text">EXPORT DATA</span>
+        </div>
+
+        <button class="action-btn action-btn--export" id="exportBtn">
+            <svg class="action-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="17 8 12 3 7 8" />
+                <line x1="12" y1="3" x2="12" y2="15" />
+            </svg>
+            <span>EXPORT</span>
+        </button>
+    </div>
+</div>
+          </div>
+            
+        </div>
+
+        <!-- ================= LOGIN PAGE ================= -->
+        <div class="logInPage page" id="logInPage">
+
+            <div class="head-cont">
+                <h1>☃️WELCOME☃️</h1>
+                <h3 id="greet">❄️Glad to See You Again❄️</h3>
+            </div>
+
+            <div id="descIn">
+                <h3 id="desc">Log In To SAVE Your Data For Future</h3>
+            </div>
+
+            <div class="wrapper-div">
+                <div id="form-cont">
+
+                    <form id="logInForm">
+                        <h1>Log In</h1>
+
+                        <label>Email</label>
+                        <input type="email" id="logInEmail" placeholder="Enter Email"/>
+
+                        <label>Password</label>
+                        <input type="password" id="logInPass" placeholder="Your Pass?" autocomplete="off"/>
+
+                        <button id="logInBtn" type="submit">LOG IN</button>
+
+                        <p>Don't Have Any Account Yet?<br>
+                            <span id="signUpLink">Sign Up </span>Here!
+                        </p>
+                    </form>
+
+                    <form id="signUpForm">
+                        <h1>Sign Up</h1>
+
+                        <label>Email</label>
+                        <input type="email" id="signUpEmail" placeholder="Email Please!"/>
+
+                        <label>username</label>
+                        <input type="text" id="username" placeholder="Give A Name!"/>
+
+                        <label>Password</label>
+                        <input type="password" id="signUpPass" placeholder="Create One" autocomplete="off"/>
+
+                        <label>Confirm Password</label>
+                        <input type="password" id="conPassword" placeholder="Final Step!" autocomplete="off"/>
+
+                        <button id="signUpBtn" type="submit">Sign Up</button>
+
+                        <p>Already Have an Account?<br>
+                            <span id="logInLink">Log In </span>Here!
+                        </p>
+                    </form>
+
+                </div>
+            </div>
+
+            <h4>
+                Wanna Know About This App More?<br>
+                Please Procced To this <span id="aboutPageLink">About Page</span> !
+            </h4>
+
+        </div>
+
+        <!-- ================= PROFILE PAGE ================= -->
+        <div id="profilePage" class="profilePage page">
+
+            <h1 id="head">🔮PROFILE</h1>
+
+            <div id="profilePic">P</div>
+
+            <button id="signOutBtn">Sign Out</button>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
