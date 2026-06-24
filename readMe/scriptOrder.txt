@@ -1,0 +1,13 @@
+<!-- Load scripts in THIS exact order -->
+  <script src="js/sounds.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/leveling.js"></script>
+  <script src="js/rewards.js"></script>
+  <script src="js/history.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/stopwatch.js"></script>
+  <script src="js/importExport.js"></script>
+  <script src="js/achievements.js"></script>
+  <script src="js/main.js"></script>
