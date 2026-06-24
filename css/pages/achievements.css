@@ -295,6 +295,12 @@
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     user-select: none;
+    transform: translateY(1em) scale(0);
+    transition: all 0.3s;
+}
+
+.achievement-card.show {
+    transform: translateY(0em) scale(1);
 }
 
 .achievement-card.unlocked {
