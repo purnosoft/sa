@@ -1,15 +1,15 @@
 // All sound effects and audio unlocking
 const sounds = {
-  error: new Audio("../sounds/error.wav"),
-  serror: new Audio("../sounds/serror.wav"),
-  click: new Audio("../sounds/click.wav"),
-  imported: new Audio("../sounds/imported.wav"),
-  success: new Audio("../sounds/success.wav"),
-  updateBar: new Audio("../sounds/updateBar.wav"),
-  task1: new Audio("../sounds/task1.wav"),
-  task2: new Audio("../sounds/task2.wav"),
-  task3: new Audio("../sounds/task3.wav"),
-  ach: new Audio("../sounds/ach.wav")
+  error: new Audio("sounds/error.wav"),
+  serror: new Audio("sounds/serror.wav"),
+  click: new Audio("sounds/click.wav"),
+  imported: new Audio("sounds/imported.wav"),
+  success: new Audio("sounds/success.wav"),
+  updateBar: new Audio("sounds/updateBar.wav"),
+  task1: new Audio("sounds/task1.wav"),
+  task2: new Audio("sounds/task2.wav"),
+  task3: new Audio("sounds/task3.wav"),
+  ach: new Audio("sounds/ach.wav")
 };
 
 const taskSounds = [sounds.task1, sounds.task2, sounds.task3];
