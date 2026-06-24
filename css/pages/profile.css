@@ -1,0 +1,240 @@
+/* Profile Page */
+#profilePage {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #020617, #0f172a, #020617, #020617);
+    color: white;
+    gap: 20px;
+    transition: 1s ease;
+}
+
+#profilePageBtn{
+    display: none;
+}
+
+#profilePic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5em;
+    aspect-ratio: 1/1;
+    background: #10c9ff;
+    border: 2px solid white;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+}
+
+#signOutBtn {
+    width: 5em;
+    height: 2em;
+    background: transparent;
+    border: 2px solid #ff1010;
+    border-radius: 5px;
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+#signOutBtn:hover {
+    background: #ff1010;
+}
+
+/* Login Page */
+#logInPage {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+    gap: 20px;
+    transition: 0.7s ease;
+}
+
+#logInPage > .head-cont {
+    text-align: center;
+}
+
+#logInPage > #descIn {
+    margin-top: 10px;
+}
+
+#logInPage #form-cont {
+    position: relative;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    flex-direction: column;
+    width: clamp(250px, 40vw, 350px);
+    height: clamp(500px, 40vh, 550px);
+    margin: 0 auto;
+    gap: 1em;
+    transition: all 1s ease;
+}
+
+#logInForm,
+#signUpForm {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    height: auto;
+    padding: 1em;
+    background-size: 300% 300%;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 1.5em;
+    color: white;
+    text-align: center;
+    gap: 2em;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+    transition: 1s ease;
+    animation: gradientAnim 8s ease infinite;
+}
+
+#logInForm {
+    background: linear-gradient(135deg, #1569e9, #00d2ff, #7b2ff7);
+}
+
+#signUpForm {
+    background: linear-gradient(135deg, #00d2ff, #7873f5, #ff6ec4);
+    transform: translateX(500%) scale(0);
+    opacity: 0;
+    gap: 1em;
+}
+
+#logInForm:focus-within {
+    border: 1px solid #2beaff;
+    box-shadow: 0 0 5px #00ff7f, 0 0 15px #00d2ff, 0 0 25px #7b2ff7, 0 0 35px #00ff7f;
+}
+
+#signUpForm:focus-within {
+    border: 1px solid #2beaff;
+    box-shadow: 0 0 5px #bd4bf2, 0 0 15px #00d2ff, 0 0 25px #7b2ff7, 0 0 35px #f24bd5;
+}
+
+#logInForm label, 
+#signUpForm label {
+    color: #F0F0F0;
+    font-size: 1.05em;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-shadow: 0.5px 0.5px 1px black;
+}
+
+#logInForm .email-cont, 
+#logInForm .pass-cont, 
+#signUpForm .email-cont, 
+#signUpForm .pass-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 0.5em;
+}
+
+#logInForm input[type="email"], 
+#logInForm input[type="password"], 
+#signUpForm input[type="email"], 
+#signUpForm input[type="password"], 
+#signUpForm input[type="text"] {
+    width: 80%;
+    height: 1.5em;
+    padding: 0.6em;
+    background: transparent;
+    border-top: none;
+    border-right: none;
+    border-bottom: 2px solid white;
+    border-left: 2px dotted white;
+    outline: none;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    text-shadow: 0.5px 0.5px 1px gray;
+    transition: 0.5s ease;
+}
+
+#logInForm input[type="email"]::placeholder, 
+#logInForm input[type="password"]::placeholder, 
+#signUpForm input::placeholder {
+    color: white;
+    text-shadow: 0.5px 0.5px 1px gray;
+}
+
+#logInForm input[type="email"]:focus, 
+#logInForm input[type="password"]:focus {
+    border-bottom: 2px solid #4dff10;
+    border-left: 2px dashed #4dff10;
+}
+
+#signUpForm input:focus {
+    border-bottom: 2px solid #fa1e1e;
+    border-left: 2px dashed #fa1e1e;
+}
+
+#logInForm input[type="email"]:focus::placeholder, 
+#logInForm input[type="password"]:focus::placeholder, 
+#signUpForm input:focus::placeholder {
+    font-size: 0;
+}
+
+#logInForm button[type="submit"], 
+#signUpForm button[type="submit"] {
+    width: 40%;
+    height: 2.5em;
+    background: transparent;
+    border: 2px solid #4dff10;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0.5px 0.5px 1px gray;
+    transition: 1s ease;
+}
+
+#signUpForm button[type="submit"] {
+    border: 2px solid #fa1e1e;
+}
+
+#logInForm button[type="submit"]:hover, 
+#signUpForm button[type="submit"]:hover {
+    background: #4dff10;
+    color: white;
+    transform: scale(1.1);
+}
+
+#signUpForm button[type="submit"]:hover {
+    background: #fa1e1e;
+}
+
+#logInForm p, 
+#signUpForm p {
+    text-transform: capitalize;
+    text-shadow: 0.5px 0.5px 1px gray;
+}
+
+#logInLink {
+    color: #fa1e1e;
+}
+
+#signUpLink {
+    color: #4dff10;
+}
+
+#greet {
+    margin: 10px 0;
+}
+
+#aboutPageLink {
+    color: #ff10cb;
+    cursor: pointer;
+}
