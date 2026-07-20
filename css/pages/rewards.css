@@ -1,0 +1,518 @@
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@600;700;800&display=swap');
+
+/* ===== Base & Dreamy Dark Background ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at 30% 30%, #1f1a3a, #0f0c1f);
+    /* deep cosmic purple/black, smooth and gentle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* ===== Main Container ===== */
+.rewardsPage {
+    width: 100%;
+    max-width: 750px;
+    padding: 35px 25px 40px;
+    border-radius: 60px 60px 50px 50px;
+    background: rgba(20, 16, 38, 0.85);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6),
+                inset 0 0 40px rgba(120, 100, 255, 0.08);
+    border: 1px solid rgba(255, 200, 255, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.rewardsPage:hover {
+    box-shadow: 0 30px 55px rgba(0, 0, 0, 0.75),
+                inset 0 0 50px rgba(140, 120, 255, 0.15);
+}
+
+.rewards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== Title ===== */
+.page-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.8rem;
+    color: #fff0f9;
+    text-shadow: 0 0 20px rgba(255, 120, 200, 0.8),
+                 0 0 5px #c084fc;
+    margin-bottom: 0.3rem;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* ===== Gentle message – smaller & spaced down ===== */
+.gentle-message {
+    font-size: 0.95rem;               /* smaller */
+    font-weight: 700;
+    color: #e4d0ff;
+    background: rgba(255, 230, 250, 0.06);
+    padding: 8px 22px;
+    border-radius: 40px;
+    margin-top: 8px;                  /* extra space from title */
+    margin-bottom: 30px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 220, 255, 0.15);
+    box-shadow: 0 4px 15px rgba(180, 130, 255, 0.2);
+    animation: softGlow 2.5s infinite alternate;
+}
+
+@keyframes softGlow {
+    from { text-shadow: 0 0 8px rgba(200, 160, 255, 0.4); }
+    to { text-shadow: 0 0 14px rgba(230, 200, 255, 0.6); }
+}
+
+/* ===== Reward Cards Grid ===== */
+.reward-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    width: 100%;
+    margin-bottom: 30px;
+    min-height: 60px;
+}
+
+@media (max-width: 520px) {
+    .reward-cards {
+        grid-template-columns: 1fr;
+    }
+    .page-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* ===== Individual Reward Card ===== */
+.reward-card {
+    background: rgba(30, 22, 50, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 35px;
+    padding: 22px 18px 18px;
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.4),
+                inset 0 1px 1px rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 2px solid rgba(255, 200, 255, 0.15);
+    position: relative;
+    overflow: hidden;
+    animation: cardPopIn 0.45s ease-out both;
+}
+
+.reward-card.pop {
+    animation: cardPopIn 0.45s ease-out;
+}
+
+@keyframes cardPopIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.85);
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(-4px) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Accent border colors – vibrant but soft */
+.reward-card:nth-child(1) { border-color: #ff99cc; }
+.reward-card:nth-child(2) { border-color: #a0e7e7; }
+.reward-card:nth-child(3) { border-color: #d4a5ff; }
+.reward-card:nth-child(4) { border-color: #ffd966; }
+
+.reward-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 18px 25px rgba(0, 0, 0, 0.6),
+                0 0 20px rgba(180, 130, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Emoji */
+.card-emoji {
+    font-size: 2.8rem;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.5));
+    transition: transform 0.2s;
+}
+
+.reward-card:hover .card-emoji {
+    transform: rotate(4deg) scale(1.1);
+}
+
+/* Card label */
+.card-label {
+    font-weight: 800;
+    color: #f0e4ff;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 3px 15px;
+    border-radius: 20px;
+    letter-spacing: 0.4px;
+}
+
+/* ===== Input field (when editing) ===== */
+.reward-input {
+    width: 100%;
+    border: none;
+    background: rgba(10, 8, 20, 0.7);
+    border-radius: 25px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff0f9;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease;
+    outline: none;
+    border: 2px solid rgba(255, 200, 255, 0.2);
+}
+
+.reward-input::placeholder {
+    color: #7b6b9e;
+    font-weight: 600;
+}
+
+.reward-input:focus {
+    background: rgba(20, 14, 40, 0.8);
+    border-color: #d580ff;
+    box-shadow: inset 0 3px 12px rgba(200, 120, 255, 0.3),
+                0 0 0 4px rgba(200, 120, 255, 0.2);
+}
+
+/* ===== Locked reward name display (clean & stylish) ===== */
+.reward-name-display {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #fef9ff;
+    text-shadow: 0 0 12px rgba(255, 150, 255, 0.7);
+    background: transparent;            /* no ugly background */
+    border: none;
+    padding: 8px 0;
+    width: 100%;
+    text-align: center;
+    word-break: break-word;
+    letter-spacing: 0.5px;
+    transition: 0.2s;
+}
+
+/* subtle underline effect for locked names */
+.reward-card:not(.editable) .reward-name-display::after {
+    content: '';
+    display: block;
+    width: 40%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ffb3ff, transparent);
+    margin: 6px auto 0;
+    border-radius: 2px;
+}
+
+/* ===== Remove button ===== */
+.remove-reward-btn {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    background: rgba(255, 80, 100, 0.2);
+    border: none;
+    color: #ffb3c6;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+    backdrop-filter: blur(4px);
+    visibility: hidden;
+}
+
+.reward-card.editable .remove-reward-btn {
+    visibility: visible;
+}
+
+.remove-reward-btn:hover {
+    background: rgba(255, 80, 100, 0.6);
+    color: #fff;
+    transform: scale(1.15);
+}
+
+/* ===== Action Buttons Row ===== */
+.action-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
+/* Add Reward Button */
+.add-reward-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(255, 200, 255, 0.25);
+    color: #dccfff;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2rem;
+    padding: 12px 28px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.25s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    backdrop-filter: blur(4px);
+}
+
+.add-reward-btn span {
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.add-reward-btn:hover:not(:disabled) {
+    background: rgba(180, 130, 255, 0.15);
+    border-color: #b280ff;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(150, 100, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.add-reward-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Lock / Edit Button */
+.save-button {
+    background: linear-gradient(135deg, #b86eff, #ff7eb3);
+    border: none;
+    padding: 14px 40px;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-family: 'Fredoka One', cursive;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(180, 70, 200, 0.4);
+    transition: all 0.25s ease;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.save-button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 15px 25px rgba(200, 100, 220, 0.55);
+    background: linear-gradient(135deg, #c884ff, #ff99c8);
+}
+
+.save-button:active {
+    transform: translateY(2px) scale(0.97);
+}
+
+/* Status hint */
+.status-hint {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: #c7b2ff;
+    font-weight: 700;
+    min-height: 24px;
+}
+
+/* ===== Empty State ===== */
+.empty-rewards-state {
+    grid-column: 1 / -1; /* span full grid width */
+    text-align: center;
+    padding: 30px 20px;
+    color: #d9c5ff;
+    background: rgba(255, 220, 255, 0.05);
+    border-radius: 40px;
+    border: 2px dashed rgba(255, 200, 255, 0.2);
+    margin: 10px 0;
+}
+
+.empty-rewards-state .empty-emoji {
+    font-size: 3.5rem;
+    display: block;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 12px #ff99cc);
+    animation: floatEmoji 3s ease-in-out infinite;
+}
+
+@keyframes floatEmoji {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+.empty-rewards-state p {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+    color: #f0e0ff;
+}
+
+.empty-sub {
+    font-size: 0.95rem;
+    color: #b8a0e0;
+    font-weight: 600;
+}
+
+.reward-completed-badge{
+    position: absolute;
+    top: 14px;
+    right: 14px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(135deg, #38d977, #27ae60);
+    color: #fff;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .3px;
+
+    box-shadow: 0 4px 12px rgba(46, 204, 113, .35);
+
+    user-select: none;
+    pointer-events: none;
+}
+
+.go-rewards-btn{
+    margin-top:18px;
+    padding:12px 24px;
+
+    border:none;
+    border-radius:999px;
+
+    background:linear-gradient(135deg,#ff7eb3,#ff5fa2,#ff8dc7);
+    background-size:200% 200%;
+
+    color:#fff;
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:.3px;
+
+    cursor:pointer;
+    outline:none;
+
+    box-shadow:
+        0 8px 22px rgba(255,95,162,.35),
+        0 0 18px rgba(255,126,179,.25);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        filter .25s ease,
+        background-position .5s ease;
+
+    animation: rewardBtnGlow 3s ease-in-out infinite;
+}
+
+.go-rewards-btn:hover{
+    transform:translateY(-3px) scale(1.04);
+    background-position:right center;
+
+    box-shadow:
+        0 12px 28px rgba(255,95,162,.45),
+        0 0 28px rgba(255,126,179,.45);
+}
+
+.go-rewards-btn:active{
+    transform:scale(.96);
+}
+
+.go-rewards-btn:focus-visible{
+    outline:3px solid rgba(255,255,255,.5);
+    outline-offset:3px;
+}
+
+@keyframes rewardBtnGlow{
+    0%,100%{
+        box-shadow:
+            0 8px 22px rgba(255,95,162,.35),
+            0 0 18px rgba(255,126,179,.25);
+    }
+
+    50%{
+        box-shadow:
+            0 10px 30px rgba(255,95,162,.55),
+            0 0 35px rgba(255,126,179,.5);
+    }
+}
+
+.no-rewards-message{
+    text-align:center;
+    padding:30px 20px;
+}
+
+.empty-emoji{
+    display:block;
+    font-size:64px;
+    margin-bottom:14px;
+
+    animation:bounceEmoji 2s ease-in-out infinite;
+}
+
+.no-reward-title{
+    margin:0;
+    font-size:24px;
+    font-weight:800;
+    color:#ffffff;
+    letter-spacing:.3px;
+
+    text-shadow:0 0 12px rgba(255,255,255,.25);
+}
+
+.no-reward-subtitle{
+    margin:10px 0 22px;
+
+    font-size:17px;
+    font-weight:500;
+
+    color:#ffd8f0;
+
+    line-height:1.5;
+}
+
+@keyframes bounceEmoji{
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    25%{
+        transform:translateY(-6px) rotate(-6deg);
+    }
+
+    75%{
+        transform:translateY(-6px) rotate(6deg);
+    }
+}

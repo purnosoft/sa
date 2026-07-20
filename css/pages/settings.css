@@ -1,0 +1,224 @@
+.settingsPage{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:25px;
+    gap:20px;
+    color:white;
+}
+
+.settings-title{
+    font-size:26px;
+    font-weight:700;
+    text-shadow:0 0 12px rgba(255,255,255,.3);
+}
+
+.setting-card{
+    width:min(420px,90%);
+    background:rgba(255,255,255,.06);
+    border:2px solid rgba(255,255,255,.12);
+    border-radius:18px;
+    padding:22px;
+    backdrop-filter:blur(12px);
+    box-shadow:
+        0 0 20px rgba(0,0,0,.3),
+        inset 0 0 10px rgba(255,255,255,.05);
+}
+
+.setting{
+    margin-bottom:24px;
+}
+
+.setting:last-child{
+    margin-bottom:0;
+}
+
+.setting label{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+    font-size:18px;
+    font-weight:600;
+}
+
+/* ========================= */
+/* Common Slider Style */
+/* ========================= */
+
+.setting input[type=range]{
+
+    appearance:none;
+    -webkit-appearance:none;
+
+    width:100%;
+    height:10px;
+
+    border-radius:100px;
+
+    outline:none;
+
+    cursor:pointer;
+
+    background:#ffffff;
+}
+
+/* ========================= */
+/* SFX Slider */
+/* ========================= */
+
+#sfxSlider::-webkit-slider-thumb{
+
+    appearance:none;
+    -webkit-appearance:none;
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    background:white;
+
+    border:4px solid #00d2ff;
+
+    box-shadow:
+        0 0 10px #00d2ff,
+        0 0 20px rgba(0,210,255,.5);
+
+    transition:.2s;
+}
+
+#sfxSlider::-webkit-slider-thumb:hover{
+
+    transform:scale(1.15);
+
+}
+
+/* ========================= */
+/* Music Slider */
+/* ========================= */
+
+#musicSlider::-webkit-slider-thumb{
+
+    appearance:none;
+    -webkit-appearance:none;
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    background:white;
+
+    border:4px solid #8a5cff;
+
+    box-shadow:
+        0 0 10px #8a5cff,
+        0 0 20px rgba(138,92,255,.5);
+
+    transition:.2s;
+}
+
+#musicSlider::-webkit-slider-thumb:hover{
+
+    transform:scale(1.15);
+
+}
+
+/* ========================= */
+/* Buttons */
+/* ========================= */
+
+.button-group{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:10px;
+
+}
+
+.settings-btn{
+
+    flex:1;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:14px;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.settings-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.settings-btn:active{
+
+    transform:scale(.97);
+
+}
+
+.start-btn{
+
+    background:linear-gradient(135deg,#32d74b,#169c2d);
+
+    box-shadow:0 0 15px rgba(50,215,75,.35);
+
+}
+
+.start-btn:hover{
+
+    box-shadow:0 0 22px rgba(50,215,75,.6);
+
+}
+
+.stop-btn{
+
+    background:linear-gradient(135deg,#ff5f6d,#c62828);
+
+    box-shadow:0 0 15px rgba(255,90,90,.35);
+
+}
+
+.stop-btn:hover{
+
+    box-shadow:0 0 22px rgba(255,90,90,.6);
+
+}
+
+.setting input[type=range]{
+    transition: background .15s ease;
+}
+
+/* ========================= */
+/* SFX Slider Colors */
+/* ========================= */
+
+#sfxSlider{
+    --start-color: #00d2ff;
+    --end-color: #00ffa6;
+}
+
+/* ========================= */
+/* Music Slider Colors */
+/* ========================= */
+
+#musicSlider{
+    --start-color: #ff4fd8;
+    --end-color: #8a5cff;
+}
