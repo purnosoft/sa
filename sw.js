@@ -1,4 +1,4 @@
-const CACHE_NAME = "study-assist-v2.2";
+const CACHE_NAME = "study-assist-v2.3";
 
 const FILES_TO_CACHE = [
   "./",
